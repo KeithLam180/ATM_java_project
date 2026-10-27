@@ -16,19 +16,23 @@ public class BankDatabase
    // retrieve Account object containing specified account number
    private Account getAccount( int accountNumber )
    {
-      // loop through accounts searching for matching account number
       for ( Account currentAccount : accounts )
       {
-         // return current account if match found
          if ( currentAccount.getAccountNumber() == accountNumber )
             return currentAccount;
-      } // end for
-
-      return null; // if no matching account was found, return null
+      }
+      return null;
    } // end method getAccount
 
-   // determine whether user-specified account number and PIN match
-   // those of an account in the database
+   // ADDED FOR TRANSFER - check if dest account exist (no PIN needed)
+   public boolean authenticateUserExists( int accountNumber )
+   {
+      Account acc = getAccount( accountNumber );
+      if (acc != null) return true;
+      else return false;
+   }
+
+   // determine whether...
    public boolean authenticateUser( int userAccountNumber, int userPIN )
    {
       // attempt to retrieve the account with the account number
