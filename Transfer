@@ -1,5 +1,3 @@
-// Transfer.java - Part II D Transfer funds
-// Student: do transfer from my account to other account
 public class Transfer extends Transaction {
     private Keypad keypad;
 
