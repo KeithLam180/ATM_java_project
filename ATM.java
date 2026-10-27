@@ -24,7 +24,6 @@ public class ATM
       screen = new Screen(); // create screen
       keypad = new Keypad(); // create keypad 
       cashDispenser = new CashDispenser(); // create cash dispenser
-      depositSlot = new DepositSlot(); // create deposit slot
       bankDatabase = new BankDatabase(); // create acct info database
    } // end no-argument ATM constructor
 
@@ -90,7 +89,7 @@ public class ATM
             // user chose to perform one of three transaction types
             case BALANCE_INQUIRY: 
             case WITHDRAWAL: 
-            case DEPOSIT:
+            case TRANSFER:
 
                // initialize as new object of chosen type
                currentTransaction = 
@@ -116,7 +115,7 @@ public class ATM
       screen.displayMessageLine( "\nMain menu:" );
       screen.displayMessageLine( "1 - View my balance" );
       screen.displayMessageLine( "2 - Withdraw cash" );
-      screen.displayMessageLine( "3 - Deposit funds" );
+      screen.displayMessageLine( "3 - Transfer funds" );
       screen.displayMessageLine( "4 - Exit\n" );
       screen.displayMessage( "Enter a choice: " );
       return keypad.getInput(); // return user's selection
@@ -138,9 +137,9 @@ public class ATM
             temp = new Withdrawal( currentAccountNumber, screen, 
                bankDatabase, keypad, cashDispenser );
             break; 
-         case DEPOSIT: // create new Deposit transaction
-            temp = new Deposit( currentAccountNumber, screen, 
-               bankDatabase, keypad, depositSlot );
+         case TRANSFER: // create new Deposit transaction
+            temp = new Transfer( currentAccountNumber, screen, 
+               bankDatabase, keypad );
             break;
       } // end switch
 
