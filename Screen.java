@@ -15,10 +15,10 @@ public class Screen
       System.out.println( message );   
    } // end method displayMessageLine
 
-   // display a dollar amount
+      // display a dollar amount
    public void displayDollarAmount( double amount )
    {
-      System.out.printf( "$%,.2f", amount );   
+      System.out.printf( "HKD %,.2f", amount );    
    } // end method displayDollarAmount 
 } // end class Screen
 
