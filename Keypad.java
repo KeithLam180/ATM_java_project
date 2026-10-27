@@ -18,7 +18,7 @@ public class Keypad
       return input.nextInt(); // we assume that user enters an integer  
    } // end method getInput
 
-   // ADDED FOR TRANSFER - for amount like 9.90 (FAQ Q4)
+   // ADDED FOR TRANSFER
    public double getDoubleInput()
    {
       return input.nextDouble();
