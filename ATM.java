@@ -14,7 +14,7 @@ public class ATM
    // constants corresponding to main menu options
    private static final int BALANCE_INQUIRY = 1;
    private static final int WITHDRAWAL = 2;
-   private static final int DEPOSIT = 3;
+   private static final int TRANSFER = 3;
    private static final int EXIT = 4;
 
    // no-argument ATM constructor initializes instance variables
